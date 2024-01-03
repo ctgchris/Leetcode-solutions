@@ -5,11 +5,13 @@ class Solution(object):
         :type t: str
         :rtype: bool
         """
-        #add to dict using s, then remove using t, check dict at end if empty or not
+        #this solution creates two dictionarys, and makes characters the index and value the count. 
+        #check if hashmaps equal to see if they are anagrams meaning they have same number of certaincharacters
         if len(s) != len(t):
             return False
         countS, countT = {}, {}
         for i in range(len(s)):
+
             countS[s[i]]= 1 + countS.get(s[i], 0)
             countT[t[i]]= 1 + countT.get(t[i], 0)
 
