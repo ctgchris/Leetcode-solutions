@@ -4,6 +4,5 @@ class Solution:
         for n in nums:
             if n in mySet:
                 return True
-            else:
-                mySet.add(n)
+            mySet.add(n)
         return False
