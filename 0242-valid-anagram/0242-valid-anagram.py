@@ -5,8 +5,7 @@ class Solution(object):
         :type t: str
         :rtype: bool
         """
-        #this solution creates two dictionarys, and makes characters the index and value the count. 
-        #check if hashmaps equal to see if they are anagrams meaning they have same number of certaincharacters
+        
         if len(s) != len(t):
             return False
         countS, countT = {}, {}
