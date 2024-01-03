@@ -6,8 +6,6 @@ class Solution(object):
         :rtype: bool
         """
         
-        if len(s) != len(t):
-            return False
         countS, countT = {}, {}
         for i in range(len(s)):
 
