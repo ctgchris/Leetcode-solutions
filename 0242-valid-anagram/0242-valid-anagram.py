@@ -8,9 +8,9 @@ class Solution(object):
         #add to dict using s, then remove using t, check dict at end if empty or not
         if len(s) != len(t):
             return False
-        
-        for char in set(s):
-            if s.count(char) != t.count(char):
-                return False
-            
-        return True
+        countS, countT = {}, {}
+        for i in range(len(s)):
+            countS[s[i]]= 1 + countS.get(s[i], 0)
+            countT[t[i]]= 1 + countT.get(t[i], 0)
+
+        return countS == countT
