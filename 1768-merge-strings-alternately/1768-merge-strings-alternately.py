@@ -1,8 +1,5 @@
 class Solution:
     def mergeAlternately(self, word1: str, word2: str) -> str:
-        # loop through 
-        # if same length, 1 longer, 2 longer 
-        # 
         size=0
         res = ""
         if (len(word1) > len(word2)):
