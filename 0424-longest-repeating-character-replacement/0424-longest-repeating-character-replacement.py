@@ -1,12 +1,13 @@
 class Solution:
     def characterReplacement(self, s: str, k: int) -> int:
-        count = collections.defaultdict(int)
-        maxn = i = j = 0
-        for i in range(1, len(s)+1):
-            count[s[i-1]] += 1
-            maxn = max(maxn, count[s[i-1]])
-            if i - j - maxn > k:
-                count[s[j]] -= 1
-                j += 1
-        return i-j
+        h = {}
+        i, j, ans = 0, 0, 0
+        while j < len(s):
+            h[s[j]] = h.get(s[j],0) + 1
+            while j-i+1-max(h.values()) > k:
+                h[s[i]] -= 1
+                i += 1
+            ans = max(ans,j-i+1)
+            j += 1
+        return ans
             
