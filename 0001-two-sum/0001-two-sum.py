@@ -1,8 +1,6 @@
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:   
 
-        #two sum
-        #make a hashmap: with key as the diff and value as the array position
         
         myMap= {}
         
