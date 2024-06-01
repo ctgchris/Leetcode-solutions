@@ -4,11 +4,11 @@ class Solution:
         
         myMap= {}
         
-        for i in range(len(nums)):
-            diff = target - nums[i] 
-            if nums[i] in myMap:
-                arr=[myMap[nums[i]], i]
+        for i, n in enumerate(nums):
+            diff = target - n
+            if diff in myMap:
+                arr=[myMap[diff], i]
                 return arr
             else:
-                myMap[diff]=i 
+                myMap[n]=i 
                 
