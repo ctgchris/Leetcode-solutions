@@ -4,8 +4,8 @@ class Solution:
             return True
         curr=0
         lenS=len(s)
-        lenT=len(t)
-        if lenS > lenT:
+
+        if lenS > len(t):
             return False
         for c in t:
             
