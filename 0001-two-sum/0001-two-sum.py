@@ -6,7 +6,7 @@ class Solution:
         for i, num in enumerate(nums):
             diff=target-num
 
-            if diff in dic:
+            if diff in hashMap:
                 return [hashMap[diff], i]
             hashMap[num]=i
         
