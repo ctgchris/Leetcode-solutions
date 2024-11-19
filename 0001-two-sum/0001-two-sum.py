@@ -1,14 +1,12 @@
 class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:   
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        
 
+        hashMap={}
+        for i, num in enumerate(nums):
+            diff=target-num
+
+            if diff in dic:
+                return [hashMap[diff], i]
+            hashMap[num]=i
         
-        myMap= {}
-        
-        for i in range(len(nums)):
-            diff = target - nums[i] 
-            if nums[i] in myMap:
-                arr=[myMap[nums[i]], i]
-                return arr
-            else:
-                myMap[diff]=i 
-                
