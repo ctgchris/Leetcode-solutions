@@ -2,13 +2,16 @@ class Solution:
     def isPalindrome(self, x: int) -> bool:
         
         # 2 pointer solution
+        if x<0:
+            return False
 
-        l=0
-        string=str(x)
-        r=len(string)-1
-        while l<r:
-            if string[l]!=string[r]:
-                return False
-            l+=1
-            r-=1
-        return True
+        temp=x
+        reverse=0
+
+        while temp!=0:
+            digit=temp%10
+            reverse=reverse*10+digit
+            temp=temp//10
+        return reverse==x
+
+        
