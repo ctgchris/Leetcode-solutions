@@ -1,8 +1,16 @@
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        hash=defaultdict(list)
-        for s in strs:
-            key="".join(sorted(list(s)))
-            hash[key].append(s)
+        #get the ASCII values of each word and check if exists in hashmap, if yes append: key: ASCII, value: strings
+        #after iteration, then get all hash.values and add to res
 
-        return [l for l in hash.values()]
+        mapS={}
+
+        for s in strs:
+            sorted_s=''.join(sorted(s))
+            if sorted_s in mapS:
+                mapS[sorted_s].append(s)
+            else:
+                mapS[sorted_s]=[s]
+
+        return list(mapS.values())
+
