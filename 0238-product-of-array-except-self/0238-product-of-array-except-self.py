@@ -1,11 +1,19 @@
-class Solution:
-    def productExceptSelf(self, nums: List[int]) -> List[int]:
-        arr=[1]*(len(nums))
+class Solution(object):
+    def productExceptSelf(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+        #make a prefix array, then postfix array. multiply their results
+        res=[1] * len(nums)
         prefix=1
-        for i in range(1, len(nums)):
-            arr[i]=arr[i-1]*nums[i-1]
+        for i in range(len(nums)):
+            res[i]=prefix
+            prefix*=nums[i]
         postfix=1
-        for i in range(len(nums) -1, -1, -1):
-            arr[i]*=postfix
+        for i in range(len(nums)-1, -1, -1):
+            res[i]*=postfix
             postfix*=nums[i]
-        return arr
+
+        return res
+            
