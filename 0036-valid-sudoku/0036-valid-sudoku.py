@@ -1,6 +1,5 @@
 class Solution:
     def isValidSudoku(self, board: List[List[str]]) -> bool:
-        #Validate rows
         for i in range(9):
             s=set()
             for j in range(9):
@@ -9,7 +8,7 @@ class Solution:
                     return False
                 elif item != '.':
                     s.add(item)
-        #cols
+
         for i in range(9):
             s=set()
             for j in range(9):
@@ -18,7 +17,6 @@ class Solution:
                     return False
                 elif item != '.':
                     s.add(item)
-        #boxes
 
         starts=[(0,0), (0,3), (0,6),
                 (3,0), (3,3), (3, 6),
