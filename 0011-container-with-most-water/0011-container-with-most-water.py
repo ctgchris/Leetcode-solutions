@@ -5,7 +5,8 @@ class Solution:
         maxArea = 0
 
         while left < right:
-            currentArea = min(height[left], height[right]) * (right - left)
+            width=right-left
+            currentArea = min(height[left], height[right]) * width
             maxArea = max(maxArea, currentArea)
 
             if height[left] < height[right]:
