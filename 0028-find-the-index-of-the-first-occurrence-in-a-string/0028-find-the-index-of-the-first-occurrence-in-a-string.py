@@ -3,20 +3,21 @@ class Solution:
         
         if len(needle) > len(haystack):
             return -1
-        #s a d
-        #s a d
+        
+        i, j = 0, 0
 
-        start=2
-        start_n=2
-        for i in range(len(haystack)-len(needle)+1):
+        while i < len(haystack) and j < len(needle):
             start=i
-            start_n=0
+
+            while i<len(haystack) and j < len(needle) and haystack[i]==needle[j]:
+                i+=1
+                j+=1
             
-            while start_n < len(needle) and haystack[start] == needle[start_n]:    
-                start+=1
-                start_n+=1
-            if start_n >= len(needle):
-                    return i
+            if j ==len(needle):
+                return start
+            else:
+                i=start+1
+                j=0
 
 
 
