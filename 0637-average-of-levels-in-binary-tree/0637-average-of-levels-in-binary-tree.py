@@ -9,23 +9,22 @@ class Solution:
     def averageOfLevels(self, root: Optional[TreeNode]) -> List[float]:
         #bfs
 
-        q=deque()
-        q.append(root)
+        q=deque([root])
         res=[]
         while q:
-            currlength=len(q)
-            avg=0
-            for i in range(currlength):
+            curr_length=len(q)
+            level_sum=0
+            for _ in range(curr_length):
                 
                 curr=q.popleft()
-                avg+=curr.val
+                level_sum+=curr.val
                 if curr.left:
                     q.append(curr.left)
                 if curr.right:
                     q.append(curr.right)
                 
             
-            avg=avg/currlength
+            avg=level_sum/curr_length
             res.append(avg)
         
         return res
