@@ -8,7 +8,7 @@
 class Solution:
     def guessNumber(self, n: int) -> int:
         l, r = 1,n
-        while l<r:
+        while l<=r:
             mid=(l+r)//2
             call=guess(mid)
             if call == -1:
@@ -17,4 +17,4 @@ class Solution:
                 l=mid+1
             else:
                 return mid
-        return l
+        
