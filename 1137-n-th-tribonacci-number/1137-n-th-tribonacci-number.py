@@ -4,7 +4,6 @@ class Solution:
             return 0
         if n < 3:
             return 1
-        #O(1) space
         t0, t1, t2= 0, 1, 1
 
         for i in range(3, n+1):
