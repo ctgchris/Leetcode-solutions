@@ -1,14 +1,13 @@
-class Solution:
-    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+class Solution(object):
+    def groupAnagrams(self, strs):
+        """
+        :type strs: List[str]
+        :rtype: List[List[str]]
+        """
         
 
-        mapS=defaultdict(list)
-
-        for s in strs:
-            count=[0] * 26
-            for char in s:
-                count[ord(char)- ord('a')]+=1
-
-            mapS[tuple(count)].append(s)
-
-        return list(mapS.values())
+        #sort each word, then check if sorted word is in dict, if so append word to the sorted word key 
+        dic=defaultdict(list)
+        for word in strs:
+            dic[''.join(sorted(word))].append(word)
+        return dic.values()
