@@ -5,11 +5,18 @@ class Solution(object):
         :type t: str
         :rtype: bool
         """
-        s_counts=Counter(s)
-
+        if len(s)!= len(t):
+            return False
+        char_count={}
+        for c in s:
+            char_count[c]=char_count.get(c, 0) + 1
+        
         for c in t:
-            if s_counts[c] ==0 or c not in s_counts:
+            if c not in char_count or char_count[c]==0:
                 return False
-            s_counts[c]-=1
+            
+            else:
+                char_count[c]-=1
+        
+        return all(count==0 for count in char_count.values())
 
-        return all(count==0 for count in s_counts.values())
