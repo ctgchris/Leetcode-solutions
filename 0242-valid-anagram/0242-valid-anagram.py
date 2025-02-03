@@ -5,18 +5,16 @@ class Solution(object):
         :type t: str
         :rtype: bool
         """
-        if len(s)!= len(t):
+        if len(s)!=len(t):
             return False
-        char_count={}
+        count_s={}
         for c in s:
-            char_count[c]=char_count.get(c, 0) + 1
+            count_s[c]=count_s.get(c,0)+1
         
         for c in t:
-            if c not in char_count or char_count[c]==0:
+            if c not in count_s or count_s[c]==0:
                 return False
-            
             else:
-                char_count[c]-=1
+                count_s[c]-=1
         
-        return all(count==0 for count in char_count.values())
-
+        return all(count==0 for count in count_s.values())
